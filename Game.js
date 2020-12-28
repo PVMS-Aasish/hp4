@@ -28,14 +28,29 @@ class Game {
       form = new Form()
       form.display();
     }
-
-    
+// var level1 = createSprite(200,200,30,30);
+  //  level1.addImage("level1",level1Img);
   }
 
   play(){
     form.hide();
     
+    if(playerCount === 1){
+
+    background("brown");
+     level1 = createSprite(450,450,30,30);
+    level1.addImage("level1",level1Img);
     
+    //imageMode(CENTER);
+   // image(level1Img,0,-displayHeight*4,displayWidth,displayHeight*5);
+    level1.velocityX=-3;
+    if(level1.x<0){
+level1.x=displayWidth/2;
+
+
+    }
+
+    }
    
     drawSprites();
   }

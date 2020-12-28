@@ -7,12 +7,15 @@ var title,titleImg,title_moving;
 var title2,title2Img;
 var bg1,bg1Img;
 var support1,support2,support3,support4;
+var level1,level1Img;
+
 
 function preload(){
 
     harrypotterImg= loadImage("hpf.png")
     titleImg = loadImage("harryp.png");
     bg1Img=loadImage("background1.jpg")
+level1Img=loadImage("cave.jpg");
 
 }
 
@@ -60,9 +63,10 @@ createEdgeSprites();
 
   if(playerCount === 1){
     game.update(1);
+    
   }
   if(gameState === 1){
-    clear();
+    //clear();              
     game.play();
   }
   if(gameState === 2){
