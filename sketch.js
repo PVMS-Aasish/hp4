@@ -8,6 +8,7 @@ var title2,title2Img;
 var bg1,bg1Img;
 var support1,support2,support3,support4;
 var level1,level1Img;
+var harrySound;
 
 
 function preload(){
@@ -16,11 +17,13 @@ function preload(){
     titleImg = loadImage("harryp.png");
     bg1Img=loadImage("background1.jpg")
 level1Img=loadImage("cave.jpg");
-
+harrySound = loadSound("harry_potter_theme.mp3");
 }
 
 function setup(){
 createCanvas(900,900);
+
+harrySound.loop();
 
 bg1 = createSprite(500,500,1000,1000);
 bg1.addImage("bg1",bg1Img);
@@ -30,6 +33,7 @@ database = firebase.database();
 game = new Game();
 game.getState();
 game.start();
+ 
 
 
 
@@ -57,7 +61,7 @@ support4.visible=false;
 
 }
 function draw(){
-//background(bg1Img);
+background("black");
 
 createEdgeSprites();
 
@@ -72,6 +76,9 @@ createEdgeSprites();
   if(gameState === 2){
     game.end();
   }
+  
+
+  
 
   harrypotter.bounceOff(support1);
   harrypotter.bounceOff(support2);
