@@ -13,6 +13,8 @@ var char1Img ,char1;
 var char2,char2Img;
 var dementors,dementorsImg,dementorsGroup;
 var text,textImg;
+var mhp,mhp_flying;
+var inv2;
 
 function preload(){
 
@@ -23,6 +25,7 @@ function preload(){
     char1Img=loadImage("harry potter.png");
     char2Img=loadImage("hermoine.png");
 textImg=loadImage("text.png");
+mhp_flying=loadAnimation("mhp.png","mhp1.png","mhp2.png","mhp3.png","mhp4.png","mhp5.png","mhp6.png","mhp7.png")
    // dementorsImg-loadImage("harrypotter_dementor.png");
    
 }
@@ -64,6 +67,10 @@ char2 = createSprite(200,350,1,1);
 
 text=createSprite(450,100,1,1);
 
+mhp=createSprite(150,500,1,1);
+mhp.visible=false;
+mhp.scale=0.40;
+mhp.velocityY=1;
 //dementors =createSprite(700,800,1,1);
 
 support3=createSprite(900,100,40,500);
@@ -87,7 +94,7 @@ createEdgeSprites();
   if(gameState === 1){
      //clear();  
    // bg1.visible=false;
-   level1.velocityX=-3;
+   level1.velocityX=-5;
    if(level1.x<200){
      level1.x=level1.width/2
    }
@@ -104,13 +111,28 @@ createEdgeSprites();
 
 char1.visible=false;
 char2.visible=false;
+text.visible=false;
+mhp.visible=true;
   }
   if(mousePressedOver(char2)){
 
     char1.visible=false;
     char2.visible=false;
     text.visible=false;
+    
       }
+
+      if(keyDown("UP_ARROW")){
+
+mhp.velocityY=-3;
+
+      }
+
+      if(keyDown("DOWN_ARROW")){
+
+        mhp.velocityY=3;
+        
+              }     
     
 
   harrypotter.bounceOff(support1);
