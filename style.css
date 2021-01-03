@@ -9,3 +9,20 @@ canvas {
   margin-left:auto;
   margin-top: 100px;
 }
+#myProgress {
+  position: relative;
+  left: 500px;
+  top:600px;
+  width: 25%;
+  background-color: #ddd;
+
+}
+
+#myBar {
+  width: 10%;
+  height: 20px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 20px;
+  color: white;
+}

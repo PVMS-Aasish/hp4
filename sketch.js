@@ -8,32 +8,36 @@ var title2,title2Img;
 var bg1,bg1Img;
 var support1,support2,support3,support4;
 var level1,level1Img;
-var harrySound;
-
+var invground;
+var char1Img ,char1;
+var dementors,dementorsImg,dementorsGroup;
 
 function preload(){
 
     harrypotterImg= loadImage("hpf.png")
     titleImg = loadImage("harryp.png");
     bg1Img=loadImage("background1.jpg")
-level1Img=loadImage("cave.jpg");
-harrySound = loadSound("harry_potter_theme.mp3");
+    level1Img=loadImage("cave.jpg");
+    char1Img=loadImage("harry potter.png")
+    dementorsImg-loadImage("harrypotter_dementor.png");
+   
 }
 
 function setup(){
 createCanvas(900,900);
+level1=createSprite(500,500,1000,1000);
+level1.scale=1.5;
 
-harrySound.loop();
 
 bg1 = createSprite(500,500,1000,1000);
 bg1.addImage("bg1",bg1Img);
 bg1.scale=1.5;
 
+
 database = firebase.database();
 game = new Game();
 game.getState();
 game.start();
- 
 
 
 
@@ -51,7 +55,9 @@ title.addImage("title",titleImg)
 title.scale=0.75;
 title.velocityX=-2;
 
+char1=createSprite(700,350,1,1);
 
+dementors =createSprite(700,800,1,1);
 
 support3=createSprite(900,100,40,500);
 support3.visible=false;
@@ -59,26 +65,41 @@ support3.visible=false;
 support4=createSprite(300,100,40,500);
 support4.visible=false;
 
+dementorsGroup = new Group();
+
 }
 function draw(){
-background("black");
+//background(bg1Img);
 
 createEdgeSprites();
 
   if(playerCount === 1){
     game.update(1);
-    
+     
   }
   if(gameState === 1){
-    //clear();              
-    game.play();
+     //clear();  
+   // bg1.visible=false;
+   level1.velocityX=-3;
+   if(level1.x<200){
+     level1.x=level1.width/2
+   }
+     game.play();   
+    
+        
+    
   }
   if(gameState === 2){
     game.end();
   }
-  
 
+  if(mousePressedOver(char1)){
+
+char1.visible=false;
+
+  }
   
+    
 
   harrypotter.bounceOff(support1);
   harrypotter.bounceOff(support2);
@@ -89,4 +110,18 @@ createEdgeSprites();
   
 
 drawSprites();
+}
+
+
+function  dementors(){
+  if(World.frameCount%400 === 0){
+    var  dementors = createSprite(600,133);
+     //  dementors.addImage(" dementors", dementorsImg);
+
+ dementors.x=Math.round(random(130,135));     
+    dementors.velocityX=-5;
+     dementors.setLifetime=50;
+     dementors.scale = 0.5;
+    dementorsGroup.add(dementors);
+  }
 }
