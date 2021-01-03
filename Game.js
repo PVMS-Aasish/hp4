@@ -36,8 +36,10 @@ invground=createSprite(200,750,2000,10);
 invground.visible=false;
 
 char1.addImage("char1",char1Img);
+char2.addImage("char2",char2Img);
+text.addImage("text",textImg);
 
-dementors.addImage("dementors",dementorsImg);
+//dementors.addImage("dementors",dementorsImg);
 
 
  

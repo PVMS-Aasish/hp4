@@ -10,7 +10,9 @@ var support1,support2,support3,support4;
 var level1,level1Img;
 var invground;
 var char1Img ,char1;
+var char2,char2Img;
 var dementors,dementorsImg,dementorsGroup;
+var text,textImg;
 
 function preload(){
 
@@ -18,8 +20,10 @@ function preload(){
     titleImg = loadImage("harryp.png");
     bg1Img=loadImage("background1.jpg")
     level1Img=loadImage("cave.jpg");
-    char1Img=loadImage("harry potter.png")
-    dementorsImg-loadImage("harrypotter_dementor.png");
+    char1Img=loadImage("harry potter.png");
+    char2Img=loadImage("hermoine.png");
+textImg=loadImage("text.png");
+   // dementorsImg-loadImage("harrypotter_dementor.png");
    
 }
 
@@ -56,8 +60,11 @@ title.scale=0.75;
 title.velocityX=-2;
 
 char1=createSprite(700,350,1,1);
+char2 = createSprite(200,350,1,1);
 
-dementors =createSprite(700,800,1,1);
+text=createSprite(450,100,1,1);
+
+//dementors =createSprite(700,800,1,1);
 
 support3=createSprite(900,100,40,500);
 support3.visible=false;
@@ -65,7 +72,7 @@ support3.visible=false;
 support4=createSprite(300,100,40,500);
 support4.visible=false;
 
-dementorsGroup = new Group();
+//dementorsGroup = new Group();
 
 }
 function draw(){
@@ -96,9 +103,14 @@ createEdgeSprites();
   if(mousePressedOver(char1)){
 
 char1.visible=false;
-
+char2.visible=false;
   }
-  
+  if(mousePressedOver(char2)){
+
+    char1.visible=false;
+    char2.visible=false;
+    text.visible=false;
+      }
     
 
   harrypotter.bounceOff(support1);
@@ -113,7 +125,7 @@ drawSprites();
 }
 
 
-function  dementors(){
+/*function  dementors(){
   if(World.frameCount%400 === 0){
     var  dementors = createSprite(600,133);
      //  dementors.addImage(" dementors", dementorsImg);
@@ -124,4 +136,4 @@ function  dementors(){
      dementors.scale = 0.5;
     dementorsGroup.add(dementors);
   }
-}
+}*/
