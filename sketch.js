@@ -25,7 +25,7 @@ function preload(){
     char1Img=loadImage("harry potter.png");
     char2Img=loadImage("hermoine.png");
 textImg=loadImage("text.png");
-mhp_flying=loadAnimation("mhp.png","mhp1.png","mhp2.png","mhp3.png","mhp4.png","mhp5.png","mhp6.png","mhp7.png")
+mhp_flying=loadAnimation("mhp1.png","mhp2.png","mhp3.png","mhp4.png","mhp5.png","mhp6.png","mhp7.png")
    // dementorsImg-loadImage("harrypotter_dementor.png");
    
 }
