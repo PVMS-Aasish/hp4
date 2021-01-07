@@ -50,7 +50,7 @@ life2.addImage("life2",life2Img);
 life3.addImage("life3",life3Img);
 life4.addImage("life4",life4Img);
 
-dementors1.addImage("dementors1",dementors1Img);
+/*dementors1.addImage("dementors1",dementors1Img);
 dementors2.addImage("dementors2",dementors2Img);
 dementors3.addImage("dementors3",dementors3Img);
 dementors4.addImage("dementors4",dementors4Img);
@@ -59,7 +59,7 @@ dementors6.addImage("dementors6",dementors6Img);
 dementors7.addImage("dementors7",dementors7Img);
 dementors8.addImage("dementors8",dementors8Img);
 dementors9.addImage("dementors9",dementors9Img);
-dementors10.addImage("dementors10",dementors10Img);
+dementors10.addImage("dementors10",dementors10Img);*/
 
 
 

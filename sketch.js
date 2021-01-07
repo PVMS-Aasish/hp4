@@ -12,7 +12,8 @@ var invground;
 var char1Img ,char1;
 var char2,char2Img;
 var dementors,dementorsImg,dementorsGroup;
-var text,textImg;
+var DementorsLEFT
+
 var mhp,mhp_flying;
 var inv2;
 var life,lifeImg;
@@ -41,7 +42,7 @@ mhp_flying=loadAnimation("mhp1.png","mhp2.png","mhp3.png","mhp4.png","mhp5.png",
    life3Img=loadImage("life.png");
    life4Img=loadImage("life.png");
    dementors1Img=loadImage("harrypotter_dementor.png");
-   dementors2Img=loadImage("harrypotter_dementor.png");
+  /* dementors2Img=loadImage("harrypotter_dementor.png");
    dementors3Img=loadImage("harrypotter_dementor.png");
    dementors4Img=loadImage("harrypotter_dementor.png");
    dementors5Img=loadImage("harrypotter_dementor.png");
@@ -49,7 +50,7 @@ mhp_flying=loadAnimation("mhp1.png","mhp2.png","mhp3.png","mhp4.png","mhp5.png",
    dementors7Img=loadImage("harrypotter_dementor.png");
    dementors8Img=loadImage("harrypotter_dementor.png");
    dementors9Img=loadImage("harrypotter_dementor.png");
-   dementors10Img=loadImage("harrypotter_dementor.png");
+   dementors10Img=loadImage("harrypotter_dementor.png");*/
 }
 
 function setup(){
@@ -114,7 +115,7 @@ life4=createSprite(300,40,1,1);
 life4.scale=0.060;
 life4.visible=false;
 
-dementors1=createSprite(400,40,10,10);
+/*dementors1=createSprite(400,40,10,10);
 dementors1.scale=0.10;
 dementors1.visible=false;
 dementors2=createSprite(430,40,10,10);
@@ -143,7 +144,7 @@ dementors9.scale=0.10;
 dementors9.visible=false;
 dementors10=createSprite(670,40,10,10);
 dementors10.scale=0.10;
-dementors10.visible=false;
+dementors10.visible=false;*/
 support3=createSprite(900,100,40,500);
 support3.visible=false;
 
@@ -250,7 +251,7 @@ mhp.velocityY=-3;
   title.bounceOff(support3);
   title.bounceOff(support4);
  
-  
+  text("dementorsLEFT:",440,20)
 
 drawSprites();
 
