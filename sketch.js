@@ -86,10 +86,11 @@ support3.visible=false;
 
 support4=createSprite(300,100,40,500);
 support4.visible=false;
-
 shockGroup = new Group();
 dementorsGroup=new Group();
 
+mhp.setCollider("circle",0,0,200);
+mhp.debug=false;
 }
 function draw(){
 
@@ -100,10 +101,14 @@ createEdgeSprites();
      
   }
   if(gameState === 1){
-    
+    if(keyDown("SPACE")){
+      createShock();        
+    }        
    level1.velocityX=-5;
+
    if(level1.x<200){
      level1.x=level1.width/2
+ 
    }
      game.play();   
     
@@ -140,9 +145,7 @@ mhp.velocityY=-3;
         mhp.velocityY=3;
         
               }     
-      if(keyDown("SPACE")){
-        createShock();        
-      }        
+    
 
       if(dementorsGroup.isTouching(mhp)){
 
@@ -179,16 +182,17 @@ drawSprites();
 text("Life:"+lifeCount,100,50);
     text("Enemys Left: "+enemyCount,300,50);
 }
-
 function createShock(){
   shock=createSprite(400,150,50,50);
-  shock.scale=0.30;
+  shock.scale=0.20;
   shock.y = mhp.y-32 ;
   shock.addImage("shock",shockImg);
-shock.velocityX=5;
+shock.velocityX=10;
 shock.lifetime = 300;
-
+shock.setCollider("circle",0,0,200);
 shockGroup.add(shock);
-
+      
 
 }
+
+

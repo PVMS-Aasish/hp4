@@ -32,10 +32,10 @@ class Game {
       
     level1.addImage("leve1",level1Img);
     
-    invground=createSprite(200,850,2000,10);
+    invground=createSprite(200,750,2000,10);
     invground.visible=false;
 
-    inv2=createSprite(200,-80,2000,20);
+    inv2=createSprite(200,10,2000,20);
     inv2.visible=false;
 
    
@@ -54,13 +54,16 @@ class Game {
     if (frameCount % 150 === 0){
       dementors=createSprite(950,700,2000,10);
       dementors.addImage("dementors",dementorsImg);
-      dementors.velocityX = -7;
-          
+      dementors.velocityX = -8;
+           dementors.y=Math.round(random(200,700));
       dementors.scale = 0.5;
-      dementors.lifetime = 300;
+      dementors.lifetime = 400;
+dementors.setCollider("circle",0,-100,50);
+      dementors.debug=true;
       dementorsGroup.add(dementors);
     }
-    
+  
+ 
    /* for(var i=0 ,j= 50 ; i<lifeCount && j< 300 ;i++){
         
             life=createSprite(j,40,1,1);  
